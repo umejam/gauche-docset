@@ -1,0 +1,32 @@
+{
+    "name": "Gauche",
+    "package": "gauche",
+    "index": "index.html",
+    "selectors": {
+        "h2.chapter": "Section",
+	"dt": [
+	    {
+		"requiretext": "Function: ",
+		"type": "Function"
+	    },
+	    {
+		"requiretext": "Macro: ",
+		"type": "Macro"
+	    },
+	    {
+		"requiretext": "Class: ",
+		"type": "Class"
+	    },
+	    {
+		"requiretext": "Special Form: ",
+		"type": "Keyword"
+	    }
+	]
+    },
+    "ignore": [
+        "ABOUT"
+    ],
+    "icon32x32": "gauche-icon.png",
+    "allowJS": false,
+    "ExternalURL": ""
+}
