@@ -6,21 +6,49 @@
         "h2.chapter": "Section",
 	"dt": [
 	    {
-		"requiretext": "Function: ",
+		"requiretext": "Function:",
 		"type": "Function"
 	    },
 	    {
-		"requiretext": "Macro: ",
+		"requiretext": "Macro:",
 		"type": "Macro"
 	    },
 	    {
-		"requiretext": "Class: ",
+		"requiretext": "Class:",
 		"type": "Class"
 	    },
 	    {
-		"requiretext": "Special Form: ",
+			"requiretext": "Condition Type:",
+			"type": "Class"
+		},
+		{
+		"requiretext": "Special Form:",
 		"type": "Keyword"
-	    }
+	    },
+		{
+			"requiretext": "Constant:",
+			"type": "Constant"
+		},
+		{
+			"requiretext": "Module:",
+			"type": "Module"
+		},
+		{
+			"requiretext": "Variable:",
+			"type": "Variable"
+		},
+		{
+			"requiretext": "Comparator:",
+			"type": "Function"
+		},
+		{
+			"requiretext": "Option:",
+			"type": "Option"
+		},
+		{
+			"requiretext": "Parameter:",
+			"type": "Parameter"
+		}
 	]
     },
     "ignore": [
