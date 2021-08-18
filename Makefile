@@ -1,20 +1,28 @@
-.PHONY: all gauche clean clean-all
+.PHONY: all docset clean clean-all
 
-all: gauche
-	cd Gauche/doc/gauche-refj && \
-	ln -s ../../../dashing.json . && \
-	ln -s ../../../gauche-icon.png . && \
-	dashing build gauche
+DOCDIR := Gauche/doc/gauche-refj
 
-gauche:
+all: docset
+
+docset: $(DOCDIR)/gauche.docset
+
+$(DOCDIR)/gauche.docset: $(DOCDIR)/index.html $(DOCDIR)/dashing.json $(DOCDIR)/gauche-icon.png
+	cd $(DOCDIR) && dashing build gauche
+
+$(DOCDIR)/dashing.json: dashing.json
+	cd $(DOCDIR) && ln -s ../../../dashing.json .
+$(DOCDIR)/gauche-icon.png: gauche-icon.png
+	cd $(DOCDIR) && ln -s ../../../gauche-icon.png .
+
+$(DOCDIR)/index.html:
 	cd Gauche && \
 	./DIST gen && \
-	./configure && \
+	./configure --disable-dependency-tracking --enable-multibyte=utf-8 CC=clang && \
 	make && \
 	make -C doc htmls
 
 clean:
-	cd Gauche/doc/gauche-refj && \
+	cd $(DOCDIR) && \
 	rm -fr gauche.docset && \
 	rm -f dashing.json && \
 	rm -f gauche-icon.png
